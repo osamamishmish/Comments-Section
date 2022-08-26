@@ -7,7 +7,7 @@ import Second from './Components/Second';
 class App extends Component {
   render() {
     return (
-      <div className='App'>
+      <div className='App container-fluid'>
         <First/>
         <Second/>
       </div>
