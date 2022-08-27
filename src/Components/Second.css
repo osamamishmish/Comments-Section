@@ -55,7 +55,7 @@
     justify-content:center;
     border:transparent;
 }
-.reply-container img{
+.reply-container img ,#replies img{
     width:30px;
     height:30px;
     display:flex;
@@ -63,4 +63,60 @@
     align-self:flex-start;
     margin-top:10px;
     margin-left:10px;
+}
+#replies{
+    display:flex;
+    flex-flow:column;
+    width:85%;
+    height:fit-content;
+    background-color: white;
+    margin-top:10px;
+    border-radius:10px;
+    -webkit-margin-start: auto;
+}
+.header-container{
+    display:flex;
+    flex-flow:row;
+    background-color:transparent;
+    align-self: flex-start;
+    width:100%;
+}
+.buttons-container{
+    display:flex;
+    flex-flow:row;
+    -webkit-margin-start: auto;
+    width:25%;
+}
+.buttons-container button:first-child{
+    display:flex;
+    width:10%;
+    height:30px;
+    background-color:transparent;
+    color:red;
+    margin-top:10px;
+    margin-right:10px;
+    border-radius: 10px;
+    align-items: center;
+    border:transparent;
+    -webkit-margin-start: auto;
+
+}
+.buttons-container button:last-child{
+    display:flex;
+    width:10%;
+    height:30px;
+    background-color:transparent;
+    color:hsl(238, 40%, 52%);
+    margin-top:10px;
+    margin-right:20px;
+    border-radius: 10px;
+    align-items: center;
+    border:transparent;
+    -webkit-margin-start: auto;
+}
+.header-container img{
+    display:flex;
+    justify-content:flex-start;
+    align-self:flex-start;
+    -webkit-margin-start: 0%;
 }
