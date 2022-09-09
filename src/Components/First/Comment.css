@@ -1,0 +1,143 @@
+.texted-reply{
+    width:80%;
+    -webkit-margin-start: auto;
+    background-color:white;
+    height:fit-content;
+    margin-top:10px;
+    border-radius:10px;
+    display:flex;
+    flex-flow:column;
+    padding-bottom:5px;
+    padding-right:5px;
+    
+}
+
+.reply-header{
+    display:flex;
+    flex-flow:row;
+    justify-content:flex-start;
+    height:fit-content;
+}
+.button-container{
+    display:flex;
+    flex-flow:row;
+    -webkit-margin-start: auto;
+    width:20%;
+    justify-content:space-between;
+    margin-right:10px;
+}
+.delete-button{
+    display:flex;
+    flex-flow:row;
+    width:15%;
+    height:30px;
+    background-color:transparent;
+    color:hsl(358, 79%, 66%);
+    margin-top:10px;
+    margin-right:10px;
+    border-radius: 10px;
+    align-items: center;
+    border:transparent;
+    font-weight: bold;
+    cursor:pointer;
+    
+}
+.edit-button{
+    display:flex;
+    width:20%;
+    height:30px;
+    background-color:transparent;
+    color:hsl(238, 40%, 52%);
+    margin-top:10px;
+    margin-right:20px;
+    border-radius: 10px;
+    align-items: center;
+    border:transparent;
+    font-weight: bold;
+    cursor:pointer;
+}
+.reply-header img{
+    width:30px;
+    height:30px;
+    display:flex;
+    justify-content:flex-start;
+    align-self:flex-start;
+    margin-top:10px;
+    margin-left:10px;
+}
+.tag{
+    color:blue;
+}
+.user-name{
+    color:black;
+    display: flex;
+    justify-content:center;
+    align-self:center;
+    font-weight:bold;
+    font-size: smaller;
+    margin-left: 10px;
+}
+.time{
+    margin-left:10px;
+    display:flex;
+    align-self: center;
+    font-size:x-small;
+    color:grey;
+}
+.text{
+    
+    display: flex;
+    flex-flow:row;
+    justify-content:flex-start;
+    color:hsl(211, 10%, 45%);
+    margin-left:30px;
+}
+.delete-button img{
+    width:15px;
+    height:15px;
+    margin-top:5px;
+    
+}
+.edit-button img{
+    width:15px;
+    height:15px;
+    margin-top:5px;
+    
+}
+.hide-comment{
+    display:none;
+}
+.edit{
+    display:none;
+    width:100%;
+}
+.show-edit-area{
+    display:flex;
+    flex-flow:row;
+}
+.edit textarea{
+    display:flex;
+    justify-content:flex-start;
+    width:80%;
+    height:80px;
+    background-color:white;
+    color:black;
+    border-color:grey;
+    margin:10px;
+    border-radius:5px;
+}
+.edit button{
+    display:flex;
+    width:10%;
+    height:30px;
+    background-color: hsl(238, 40%, 52%);
+    color:white;
+    margin-top:10px;
+    margin-right:10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content:center;
+    border:transparent;
+    font-weight: bold;
+    cursor:pointer;
+}

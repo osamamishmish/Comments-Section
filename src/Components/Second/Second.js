@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import max from "../Images/image-maxblagun.png";
-import julio from "../Images/image-juliusomo.png";
+import max from "../../Images/image-maxblagun.png";
+import julio from "../../Images/image-juliusomo.png";
 import "./Second.css";
 import $ from "jquery";
 
@@ -46,7 +46,10 @@ this.setState({
           $(buttonsContainer).appendTo(headerContainer).addClass("buttons-container");
           $(headerContainer).addClass("header-container").prependTo(container);
           $(img).attr("src",julio).prependTo(headerContainer);
-          $(text).text(this.state.Reply.comment).appendTo(container);
+          const tag =this.state.Reply.comment.slice(0,11),
+                theText=this.state.Reply.comment.slice(11);   
+                $(tag).css({"color":"blue"}); 
+          $(text).text(tag+theText).appendTo(container);
           $(container).addClass(this.state.Reply.id).attr("id","replies").insertAfter(".second-comment")
   }
   render() {

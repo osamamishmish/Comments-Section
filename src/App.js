@@ -1,8 +1,8 @@
 import './App.css';
 
 import React, { Component } from 'react'
-import First from './Components/First';
-import Second from './Components/Second';
+import First from './Components/First/First';
+import Second from './Components/Second/Second';
 
 class App extends Component {
   render() {
