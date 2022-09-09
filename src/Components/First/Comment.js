@@ -6,9 +6,6 @@ import Delete from "../../Icons/icon-delete.svg";
 import Edit from "../../Icons/icon-edit.svg";
 class Comment extends Component{
 
-// state={
-//     comments:this.props.replies.reply
-// }
 theIndex;
 theTag;
 theText;
@@ -30,6 +27,10 @@ theText;
         $(this.theIndex).parent().parent().parent().children().eq(2).toggleClass("show-edit-area");
        
      }
+     deleteComment=(e)=>{
+        this.theIndex=e.target
+        $(this.theIndex).parent().parent().parent().remove()
+     }
         render(){
 
         
@@ -44,7 +45,7 @@ theText;
                 <span className="user-name">juliusomo</span>
                 <span className="time"><Moment fromNow ago>{e.time}</Moment></span>
                 <div className="button-container"> 
-                <button className="delete-button"><img src={Delete} alt="" />Delete</button>
+                <button className="delete-button" onClick={this.deleteComment}><img src={Delete} alt="" />Delete</button>
                 <button className="edit-button" onClick={this.editComment}><img src={Edit} alt="" />Edit</button>
                 </div>
                 
