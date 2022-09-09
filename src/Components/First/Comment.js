@@ -43,6 +43,7 @@ theText;
                 <div className="reply-header">
                 <img src={e.img} alt="" />
                 <span className="user-name">juliusomo</span>
+                <button className="you">you</button>
                 <span className="time"><Moment fromNow ago>{e.time}</Moment></span>
                 <div className="button-container"> 
                 <button className="delete-button" onClick={this.deleteComment}><img src={Delete} alt="" />Delete</button>
