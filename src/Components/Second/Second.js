@@ -3,7 +3,8 @@ import max from "../../Images/image-maxblagun.png";
 import julio from "../../Images/image-juliusomo.png";
 import "./Second.css";
 import $ from "jquery";
-
+import Reply from "../../Icons/icon-reply.svg";
+import Comment from './Comment';
 
 class Second extends Component {
   state={
@@ -15,57 +16,55 @@ class Second extends Component {
         id:1
       }
     ],
-    Reply:[{
-      
-    }]
+    reply:[],
+    tag:"@maxblagun, "
+    
+    
+    
   }
   Reply=[];
-  ShowReplyField=()=>{
-    $(".reply-container").addClass("show")
-    $(".reply-container textarea").text("@maxblagun,")
-    }
+  Sentence;
+  theTag;
+  time;
+  ShowField=()=>{
+    $(".second-reply-field").addClass("show-field");
+  }
   SaveComment=(e)=>{
-this.Reply.comment=e.target.value
-this.Reply.id=this.Reply.length
-
-this.setState({
-  Reply:this.Reply
-})
-
+   
+      this.Sentence=e.target.value
   }
-  AddReply=()=>{
-    const container=document.createElement("div"),
-          img=document.createElement("img"),
-          headerContainer=document.createElement("div"),
-          buttonsContainer=document.createElement("div"),
-          Delete=document.createElement("button"),
-          edit=document.createElement("button"),
-          text=document.createElement("p");
-          $(Delete).text("Delete").appendTo(buttonsContainer);
-          $(edit).text("Edit").appendTo(buttonsContainer);
-          $(buttonsContainer).appendTo(headerContainer).addClass("buttons-container");
-          $(headerContainer).addClass("header-container").prependTo(container);
-          $(img).attr("src",julio).prependTo(headerContainer);
-          const tag =this.state.Reply.comment.slice(0,11),
-                theText=this.state.Reply.comment.slice(11);   
-                $(tag).css({"color":"blue"}); 
-          $(text).text(tag+theText).appendTo(container);
-          $(container).addClass(this.state.Reply.id).attr("id","replies").insertAfter(".second-comment")
+  AddAsReply=()=>{
+    this.time=new Date();
+    this.Reply.push({
+      comment:this.Sentence,
+      id:this.Reply.length,
+      img:    julio,
+      time:this.time
+    })
+    
+    this.setState({
+      reply:this.Reply
+    })
+    
+    console.log(this.state.reply)
+    
+  $(".commented").val("");
   }
+  
   render() {
-    
-    
     const data=this.state.user.map((e)=>{
       return(
-        <header className='header' key={e.id}>
+
+
+      
+      <header className='second-header' key={e.id}>
       <img src={max} alt=""/>
       <p>{e.name}</p>
       <span className='status'>{e.status}</span>
-      <span className='reply' onClick={this.ShowReplyField} >Reply</span>
-      
+      <span className='second-reply' onClick={this.ShowField}><img src={Reply} alt="" />Reply</span>
       
       </header>
-      )
+      )        
     })
     const comment=this.state.user.map((e)=>{
       return(
@@ -74,19 +73,29 @@ this.setState({
         </div>
       )
     })
+    const field=
+      (
+        <div className='second-reply-field'>
+        <img src={julio} alt=""/>
+        <textarea className='commented' onChange={this.SaveComment}/>
+        
+        <button onClick={this.AddAsReply}>Reply</button>
+        </div>
+      )
+    
     return (
       <div className="second-section">
-      
+
       <div className='second-comment'>
-        {data}
-        {comment}
+          {data}
+          {comment}
       </div>
-      <div  className="reply-container">
-      <img src={julio} alt=""/>
-        <textarea onChange={this.SaveComment}/>
-      <button className="reply-button" onClick={this.AddReply}>Reply</button>
-        </div>
-        </div>
+      <div className='text-container'>
+      <Comment replies={this.state} />
+      </div>
+          {field}
+          
+      </div>
     )
   }
 }
