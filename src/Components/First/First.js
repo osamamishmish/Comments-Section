@@ -28,7 +28,7 @@ class First extends Component {
   theTag;
   time;
   ShowField=()=>{
-    $(".reply-field").addClass("show-field");
+    $(".reply-field").toggleClass("show-field");
   }
   SaveComment=(e)=>{
    
@@ -50,6 +50,7 @@ class First extends Component {
     console.log(this.state.reply)
     
   $(".commented").val("");
+  $(".reply-field").toggleClass("show-field");
   }
   
   render() {
